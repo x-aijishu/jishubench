@@ -1,0 +1,47 @@
+[workspace]
+resolver = "2"
+members = [
+    "agent",
+    "monitor",
+    "hal",
+]
+
+[workspace.package]
+version     = "0.1.0"
+edition     = "2021"
+license     = "Apache 2.0"
+repository  = "https://github.com/x-aijishu/jishubench"
+
+[workspace.dependencies]
+# async runtime + HTTP
+tokio        = { version = "1", features = ["full"] }
+axum         = { version = "0.7", features = ["macros"] }
+tower-http   = { version = "0.5", features = ["trace"] }
+
+# serde
+serde        = { version = "1", features = ["derive"] }
+serde_json   = "1"
+
+# time
+quanta       = "0.12"
+
+# CLI
+clap         = { version = "4", features = ["derive", "env"] }
+
+# error handling
+thiserror    = "1"
+anyhow       = "1"
+
+# logging / tracing
+tracing             = "0.1"
+tracing-subscriber  = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# concurrency
+parking_lot  = "0.12"
+dashmap      = "5"
+
+# time formatting (wall-clock strings)
+chrono       = { version = "0.4", features = ["serde"] }
+
+# internal crates
+hal = { path = "hal" }

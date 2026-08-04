@@ -1,0 +1,23 @@
+target:
+  inference_base_url: https://api.minimaxi.com/v1
+  model: MiniMax-M3
+  llama_cpp: null
+
+eval:
+  enable_traces: false
+  work_dir: ./outputs
+  api_nproc: 8
+
+tau_bench:
+  domains: [airline, retail, telecom]
+  split: base
+  num_tasks: null
+  repeats: 1
+  max_steps: 100
+  n_concurrent: 4
+  agent_temperature: 0.0
+  agent_max_tokens: 2048
+  user_model_url: https://api.minimaxi.com/v1
+  user_model: MiniMax-M3
+  user_temperature: 0.0
+  user_max_tokens: 4096

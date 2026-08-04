@@ -1,0 +1,74 @@
+[project]
+name = "jishubench"
+version = "0.1.0"
+description = "Host-Target edge AI evaluation infrastructure (lmms-eval connector)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "loguru>=0.7.3",
+    "openai>=1.40",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+terminal = ["terminal-bench>=0.2.18"]
+harbor = ["harbor>=0.7.0"]
+lmms-eval = ["lmms-eval"]
+claw-eval = ["claw-eval[sandbox]"]
+tau = [
+    "tau2",
+    "audioop-lts; python_version >= '3.13'",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "pre-commit>=4.6.0",
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+]
+essentials = [
+    "jishubench[dev, lmms-eval, tau, terminal, claw-eval]",
+]
+
+[project.scripts]
+jishubench = "host.main:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["jishubench"]
+include = ["host*", "hal*", "target*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.uv.sources]
+lmms-eval = { path = "submodules/lmms-eval", editable = true }
+tau2 = { path = "submodules/tau2-bench", editable = true }
+claw-eval = { path = "submodules/claw-eval", editable = true }
+
+[tool.uv]
+conflicts = [
+  [
+    { package = "jishubench", extra = "harbor" },
+    { package = "jishubench", extra = "tau" },
+  ],
+  [
+    { package = "jishubench", extra = "harbor" },
+    { package = "jishubench", extra = "essentials" },
+  ],
+]

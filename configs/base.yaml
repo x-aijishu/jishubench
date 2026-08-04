@@ -1,0 +1,93 @@
+# Shared defaults — merged with a device-specific profile via load_settings.
+# Device-specific values (target URL, model, personal cache paths) belong in
+# configs/devices/<machine>.yaml.
+
+target:
+  monitor_timeout_s: 5
+
+  llama_cpp:
+    lifecycle:
+      ensure_loaded: true
+      autoload_fallback: true
+      wait_load_timeout_s: 30
+      poll_interval_s: 2
+      unload_after_run: true
+      unload_on_model_switch: true
+
+    preflight:
+      check_health: true
+      check_model_catalog: true
+
+eval:
+  work_dir: ./outputs
+  api_nproc: 4
+  enable_traces: true
+  save_samples: false
+
+logging:
+  level: INFO
+  save_dir: null
+  max_bytes: 10485760
+  backup_count: 5
+
+judge:
+  openai_api_base: https://api.deepseek.com/
+  model: deepseek-v4-flash
+
+lmms_eval:
+  model_backend: async_openai
+  batch_size: 1
+  adaptive_concurrency: false
+
+terminal_bench:
+  agent: terminus-2
+  dataset: terminal-bench-core==0.1.1
+  global_timeout_multiplier: 3.0
+  n_concurrent: 1
+  n_attempts: 1
+  agent_kwargs:
+    temperature: 0.0
+    parser_name: json
+
+terminal_bench_2:
+  agent: terminus-2
+  dataset: terminal-bench@2.0
+  global_timeout_multiplier: 3.0
+  n_concurrent: 1
+  n_attempts: 1
+  agent_kwargs:
+    temperature: 0.0
+
+tau_bench:
+  domains: [airline, retail, telecom]
+  split: base
+  num_tasks: null
+  repeats: 1
+  max_steps: 100
+  n_concurrent: 1
+  agent_temperature: 0.0
+  agent_max_tokens: 2048
+  user_model_url: https://api.deepseek.com/
+  user_model: deepseek-v4-flash
+  user_temperature: 0.0
+  user_max_tokens: 4096
+
+claw_eval:
+  tasks_dir: submodules/claw-eval/tasks
+  config_template: null
+  trials: 3
+  parallel: 4
+  sandbox: true
+  sandbox_image: claw-eval-agent:latest
+  sandbox_tools: false
+  no_judge: false
+  text_only: true
+  filter: null
+  tag: null
+  range: null
+  language: null
+  category: null
+  continue_existing: false
+  rerun_errors: null
+  user_agent_model_url: https://api.deepseek.com/
+  user_agent_model: deepseek-v4-flash

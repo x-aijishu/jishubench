@@ -1,0 +1,8 @@
+# Local development device — target inference server.
+target:
+  inference_base_url: http://user.local:8080/v1
+  model: gemma-4-26B-A4B
+  monitor_base_url: http://user.local:9090
+
+eval:
+  api_nproc: 4

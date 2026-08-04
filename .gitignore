@@ -1,0 +1,56 @@
+# Environment
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Development specs (OpenSpec workflow)
+openspec/
+
+# Run outputs and logs
+outputs/
+jobs/
+logs/
+
+# Models (large binary files, symlink to external)
+models
+
+# Evaluation outputs and logs (generated at runtime)
+outputs/
+logs/
+jobs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MkDocs build output
+site/
+
+.vscode/
+.cursor/
+.tmp_tb
+
+docs/design
+docs/experiments
+
+scripts/

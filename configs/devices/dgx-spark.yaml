@@ -1,0 +1,8 @@
+# MacStudio device — target inference server.
+target:
+  inference_base_url: http://<your-ip>:8080/v1
+  model: qwen3.6-35b
+  monitor_base_url: http://<your-ip>:9090
+
+eval:
+  api_nproc: 4

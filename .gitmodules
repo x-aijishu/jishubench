@@ -1,0 +1,10 @@
+[submodule "submodules/lmms-eval"]
+	path = submodules/lmms-eval
+	url = https://github.com/EvolvingLMMs-Lab/lmms-eval.git
+[submodule "submodules/tau2-bench"]
+	path = submodules/tau2-bench
+	url = https://github.com/sierra-research/tau2-bench.git
+[submodule "submodules/claw-eval"]
+	path = submodules/claw-eval
+	url = https://github.com/x-aijishu/claw-eval.git
+	branch = dev

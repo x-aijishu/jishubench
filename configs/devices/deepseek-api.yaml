@@ -1,0 +1,23 @@
+target:
+  inference_base_url: https://api.deepseek.com
+  model: deepseek-v4-flash
+  llama_cpp: null
+
+eval:
+  enable_traces: false
+  work_dir: ./outputs/experiments-0703
+  api_nproc: 8
+
+tau_bench:
+  domains: [airline, retail, telecom]
+  split: base
+  num_tasks: null
+  repeats: 1
+  max_steps: 100
+  n_concurrent: 4
+  agent_temperature: 0.0
+  agent_max_tokens: 2048
+  user_model_url: https://api.deepseek.com/
+  user_model: deepseek-v4-flash
+  user_temperature: 0.0
+  user_max_tokens: 4096

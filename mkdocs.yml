@@ -1,0 +1,73 @@
+site_name: jishubench
+site_description: Host–Target edge AI evaluation infrastructure
+repo_url: https://github.com/x-aijishu/jishubench
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Quick start: quickstart.md
+  - Architecture: architecture.md
+  - Configuration:
+    - Overview: configuration/overview.md
+    - API Keys: configuration/api-keys.md
+    - Terminal-Bench: configuration/terminal-bench.md
+    - Terminal-Bench 2.0 (Harbor): configuration/terminal-bench-2.md
+    - Claw-Eval: configuration/claw-eval.md
+    - Tau-Bench: configuration/tau-bench.md
+  - CLI reference: cli.md
+  - Deployment:
+    - edge-eval-agent:
+      - Overview: edge-eval-agent/index.md
+      - Development Guide: edge-eval-agent/guide.md
+      - CLI & API Reference: edge-eval-agent/reference.md
+      - Internals: edge-eval-agent/internals.md
+    - llama.cpp router: deployment/llama-cpp-router.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra_javascript:
+  - https://unpkg.com/mermaid@11/dist/mermaid.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/gitlab
+      link: https://github.com/x-aijishu/jishubench
