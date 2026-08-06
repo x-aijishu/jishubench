@@ -94,7 +94,7 @@ This project builds on several open-source evaluation frameworks:
 - **[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)** — dataset loading, task definition, and scoring for vision-language benchmarks
 - **[tau2-bench (tau-bench)](https://github.com/sierra-research/tau2-bench)** — tool-agent-user interaction simulation
 - **[terminal-bench](https://github.com/harbor-framework/terminal-bench)** — CLI agent evaluation harness with Docker containers
-- **[claw-eval](https://github.com/ByteDance-BTTE/claw-eval)** — agent benchmark with Docker sandbox
+- **[claw-eval](https://github.com/claw-eval/claw-eval)** — agent benchmark with Docker sandbox
 
 We thank the maintainers and contributors of these projects for their excellent work.
 

@@ -75,10 +75,7 @@ Package                Version                                   License        
 ---------------------  ----------------------------------------  ------------------  -----------------------------------------------------------------
 submodules/lmms-eval   d675c794276f268cb9946d7577fe13d817ef22b9  MIT AND Apache-2.0  https://github.com/EvolvingLMMs-Lab/lmms-eval
 submodules/tau2-bench  5ebebbe827b455b3ed04fcb9294235c6ef4e5fd6  MIT                 https://github.com/sierra-research/tau2-bench
-submodules/claw-eval   7d30999b9eb24ea1c532abf5e6d161bf2145cf34  MIT                 https://github.com/claw-eval/claw-eval (LICENSE missing in tree)
-
-Notes:
-  - submodules/claw-eval: LICENSE file missing in working tree; MIT claimed in upstream README only — full license text not reproduced here
+submodules/claw-eval   7e26298ab8a69ca46332fea15e8ea955412d3d41  MIT                 https://github.com/claw-eval/claw-eval
 
 ================================================================================
 PART 2 — FULL LICENSE TEXTS
@@ -4299,7 +4296,7 @@ https://github.com/claw-eval/claw-eval
 
 MIT License
 
-Copyright (c) Individual contributors
+Copyright (c) 2026 claw-eval
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
